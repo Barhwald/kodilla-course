@@ -1,6 +1,7 @@
 package com.kodilla.testing;
+import com.kodilla.testing.collection.OddNumbersExterminator;
 import com.kodilla.testing.forum.ForumPost;
-import com.kodilla.testing.forum.statistics.Data;
+import com.kodilla.testing.library.Book;
 
 public class TestingMain {
 
@@ -12,7 +13,6 @@ public class TestingMain {
         System.out.println(findVowels("Grzegorz"));
 
         System.out.println(ForumPost.class);
-
 
     }
 
