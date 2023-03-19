@@ -24,6 +24,10 @@ public class StreamMain {
                 .forEach(System.out::println);
 
 
+        System.out.println(mirrorString("Adam"));
+        System.out.println(mirrorString("Ewa"));
+        System.out.println(mirrorString("Kajak"));
+
 //        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 //
 //        System.out.println("Calculating expressions with lambdas");
@@ -84,6 +88,19 @@ public class StreamMain {
 //        theResultMapOfBooks.entrySet().stream()
 //                .map(entry -> entry.getKey() + ": " + entry.getValue())                   // [3]
 //                .forEach(System.out::println);
+
+
+    }
+
+    public static String mirrorString(String input) {
+
+        String mirror = "";
+
+        for (int i = 0; i < input.length(); i++) {
+            mirror = input.charAt(i) + mirror;
+        }
+
+        return mirror;
 
     }
 }
