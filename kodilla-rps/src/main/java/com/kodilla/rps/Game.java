@@ -8,7 +8,6 @@ public class Game {
     private int wins;
     private int ties;
     private int losses;
-    private String playerName;
     private Options userOption;
     private Options cpuOption;
     private int roundCount = 0;
@@ -26,16 +25,8 @@ public class Game {
         return losses;
     }
 
-    public String getPlayerName() {
-        return playerName;
-    }
-
     public void setWinsNeeded(int winsNeeded) {
         this.winsNeeded = winsNeeded;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
     }
 
     public Options getUserOption() {
@@ -80,15 +71,33 @@ public class Game {
 
     public void startGame() {
 
-        System.out.println("Welcome to the ultimate scissors-paper-rock experience!");
-        System.out.print("Type your name: ");
-
         Scanner myScanner = new Scanner(System.in);
-        setPlayerName(myScanner.nextLine());
-
         System.out.print("How many wins before game ends? ");
         setWinsNeeded(myScanner.nextInt());
         myScanner.nextLine();
+
+    }
+
+    public void startRound() {
+
+        boolean validInput = false;
+        setRoundCount(getRoundCount() + 1);
+        System.out.println("\n" + "Round " + getRoundCount() + "\n");
+
+        while (!validInput) {
+
+            System.out.print("""
+                        Press 1 - to play rock
+                        Press 2 - to play paper
+                        Press 3 - to play scissors
+                        """);
+
+            Scanner myScanner = new Scanner(System.in);
+            String response = myScanner.nextLine();
+
+            validInput = validateUserInput(response);
+
+        }
 
     }
 
@@ -151,22 +160,6 @@ public class Game {
         System.out.println("You: " + getWins() + ", CPU: " + getLosses());
         System.out.println("Ties: " + getTies());
 
-    }
-
-    public void printScore() {
-
-        String victor;
-
-        if (getWins() > getLosses()) {
-            victor = getPlayerName();
-        } else {
-            victor = "CPU";
-        }
-        System.out.println("Game has finished! " + victor + " has won. What would you like to do?\n");
-        System.out.print("""
-                    Press x - to quit the game
-                    Press n - to restart the game
-                    """);
     }
 
 }
