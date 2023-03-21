@@ -1,5 +1,6 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.array.ArrayOperations;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
@@ -23,6 +24,8 @@ public class StreamMain {
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
 
+        int[] runs = {4,5,6,7,8,9,10};
+        ArrayOperations.getAverage(runs);
 
         System.out.println(mirrorString("Adam"));
         System.out.println(mirrorString("Ewa"));
