@@ -10,7 +10,7 @@ public class Game {
     private int losses;
     private Options userOption;
     private Options cpuOption;
-    private int roundCount = 0;
+    private int roundCount;
 
 
     public int getWinsNeeded() {
@@ -67,6 +67,57 @@ public class Game {
 
     public void setRoundCount(int roundCount) {
         this.roundCount = roundCount;
+    }
+
+    public void playGame(Player player) {
+
+        startGame();
+
+        while (true) {
+
+            startRound();
+            setCpuOption(Options.getRandomOption());
+            calculateScore();
+            printResult();
+
+            if (getWinsNeeded() == getWins() || getWinsNeeded() == getLosses()) {
+
+                String victor;
+
+                if (getWins() > getLosses()) {
+                    victor = player.getName();
+                } else {
+                    victor = "CPU";
+                }
+                System.out.println("Game has finished! " + victor + " has won. What would you like to do?\n");
+                System.out.print("""
+                    Press x - to quit the game
+                    Press n - to restart the game
+                    """);
+
+                while (true) {
+
+                    Scanner myScanner = new Scanner(System.in);
+                    String response = myScanner.nextLine();
+
+                    if (response.equals("x")) {
+                        System.out.println("Bye bye " + player.getName() + "!");
+                        System.exit(0);
+                    } else if (response.equals("n")) {
+                        System.out.print("Ok " + player.getName() + ". ");
+                        setRoundCount(0);
+                        setWins(0);
+                        setLosses(0);
+                        setTies(0);
+                        playGame(player);
+                    } else {
+                        System.out.println("Pick a valid option");
+                    }
+                }
+            }
+
+        }
+
     }
 
     public void startGame() {
