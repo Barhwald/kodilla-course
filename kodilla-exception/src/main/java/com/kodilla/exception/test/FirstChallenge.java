@@ -11,7 +11,7 @@ public class FirstChallenge {
 
     public int countToPower(int base, int exponent) throws Exception {
 
-        if (base < 0 && exponent < 0) {
+        if (base < 0 || exponent < 0) {
             throw new Exception("Base or exponent below zero!");
         }
 

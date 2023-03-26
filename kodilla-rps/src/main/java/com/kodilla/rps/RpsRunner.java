@@ -10,4 +10,10 @@ public class RpsRunner {
         myGame.playGame(player);
 
     }
+
+
+//    log.debug("User with id {} and password {} logged in",id,password);
+//    log.debug(String.format("User with id %s and password %s logged in",id,password));
+
+    //               var nameAndSurname = String.format("%s and %s", name, surname)
 }

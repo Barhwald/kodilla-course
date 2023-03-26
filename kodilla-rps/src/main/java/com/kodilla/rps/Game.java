@@ -11,6 +11,11 @@ public class Game {
     private Options userOption;
     private Options cpuOption;
     private int roundCount;
+//    private static Map<String, Options> optionsMap = Map.of(
+//            "1", Options.ROCK,
+//            "2", Options.PAPER,
+//            "3", Options.SCISSORS
+//    );
 
 
     public int getWinsNeeded() {
@@ -153,6 +158,7 @@ public class Game {
     }
 
     public boolean validateUserInput(String input) {
+//        return optionsMap.containsKey(input);
 
         boolean flag = false;
 
@@ -213,4 +219,17 @@ public class Game {
 
     }
 
+//    @Override
+//    public String toString() {
+//        final StringBuilder sb = new StringBuilder("Game{");
+//        sb.append("winsNeeded=").append(winsNeeded);
+//        sb.append(", wins=").append(wins);
+//        sb.append(", ties=").append(ties);
+//        sb.append(", losses=").append(losses);
+//        sb.append(", userOption=").append(userOption);
+//        sb.append(", cpuOption=").append(cpuOption);
+//        sb.append(", roundCount=").append(roundCount);
+//        sb.append('}');
+//        return sb.toString();
+//    }
 }
