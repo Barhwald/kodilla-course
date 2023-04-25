@@ -29,12 +29,10 @@ public class MovieStore {
     }
 
     public void printMovies() {
-
         getMovies().entrySet().stream()
                 .flatMap(movieList -> movieList.getValue().stream())
                 .map(title -> title.concat("!"))
                 .forEach(System.out::print);
-
     }
 
 }
