@@ -30,7 +30,7 @@ public class MovieStore {
 
     public void printMovies() {
         getMovies().entrySet().stream()
-                .flatMap(movieList -> movieList.getValue().stream())
+                .flatMap(entry -> entry.getValue().stream())
                 .map(title -> title.concat("!"))
                 .forEach(System.out::print);
     }
