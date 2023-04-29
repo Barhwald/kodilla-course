@@ -4,7 +4,7 @@ public class EbayOrderService implements ProductOrderService {
 
     private final String name = "eBAY";
     @Override
-    public boolean rent(final User user, final Product product, double total) {
+    public boolean purchase(final User user, final Product product, double total) {
         System.out.printf("""
                 || %s ||
                 
@@ -12,7 +12,7 @@ public class EbayOrderService implements ProductOrderService {
                 Item: %s
                 Quantity: %d
                 Total: %.2f
-                """, name, user.getName(), product.type(), product.quantity(), product.price());
+                """, name, user.getName(), product.type(), product.quantity(), total);
         return true;
     }
 }

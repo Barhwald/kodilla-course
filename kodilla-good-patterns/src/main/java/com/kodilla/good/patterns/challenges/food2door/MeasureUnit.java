@@ -1,7 +1,11 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-public enum MeasureUnits {
+public enum MeasureUnit {
 
-    
+    KG,
+    DKG,
+    PIECES,
+    BOTTLES,
+    BAGS
 
 }

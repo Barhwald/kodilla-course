@@ -13,7 +13,7 @@ public class Main {
         // zadanie 13.2 productOrderService
 
         User user = new User("Mike");
-        Product product = new Product("Electronics", 1, 2000.00);
+        Product product = new Product("Electronics", 3, 2000.00);
 
         User user1 = new User("Howard");
         Product product1 = new Product("Furniture", 4, 50.25);
