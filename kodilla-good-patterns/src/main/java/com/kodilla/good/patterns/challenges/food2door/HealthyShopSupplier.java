@@ -14,4 +14,5 @@ public class HealthyShopSupplier implements FoodSupplier {
                 
                 """, name, product.getType(), product.getQuantity(), product.getMeasureUnit().toString().toLowerCase());
     }
+
 }
