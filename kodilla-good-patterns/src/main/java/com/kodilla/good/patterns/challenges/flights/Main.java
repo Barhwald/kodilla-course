@@ -17,7 +17,8 @@ public class Main {
         Flight flight6 = new Flight(Location.BARCELONA, List.of(Location.PRAGUE, Location.LONDON), Location.AUSTIN);
         Flight flight7 = new Flight(Location.SCRANTON, null, Location.CRACOW);
         Flight flight8 = new Flight(Location.WICHITA_FALLS, List.of(Location.SCRANTON, Location.WARSAW), Location.BRATISLAVA);
-
+        Flight flight9 = new Flight(Location.SCRANTON, List.of(Location.NEW_YORK), Location.LONDON);
+        Flight flight10 = new Flight(Location.MADRID, List.of(Location.BARCELONA), Location.PARIS);
 
         flightsCollection.getFlights().add(flight1);
         flightsCollection.getFlights().add(flight2);
@@ -27,6 +28,8 @@ public class Main {
         flightsCollection.getFlights().add(flight6);
         flightsCollection.getFlights().add(flight7);
         flightsCollection.getFlights().add(flight8);
+        flightsCollection.getFlights().add(flight9);
+        flightsCollection.getFlights().add(flight10);
 
 
         flightSearchEngine.searchFlightsFrom(Location.CRACOW);
@@ -37,7 +40,7 @@ public class Main {
         flightSearchEngine.searchFlightsFrom(Location.LOS_ANGELES);
         flightSearchEngine.searchFlightsTo(Location.CRACOW);
         flightSearchEngine.searchFlightsFromTo(Location.CRACOW, Location.BARCELONA);
-
+        flightSearchEngine.searchFlightsTo(Location.LONDON);
 
     }
 

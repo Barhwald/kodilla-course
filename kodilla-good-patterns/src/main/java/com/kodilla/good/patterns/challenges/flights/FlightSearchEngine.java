@@ -27,6 +27,16 @@ public class FlightSearchEngine {
         ContentPrinter.printFlights(results);
     }
 
+//    public void searchFlightsThrough(Location location) {
+//        System.out.println("Searching flights through: " + location.toString() + "...");
+//        List<Flight> results = flightsCollection.getFlights().stream()
+//                .filter(flight -> flight.through() != null)
+//                .filter(flight -> flight.through()
+//                        .stream().anyMatch(city -> city.equals(location)))
+//                .toList();
+//        ContentPrinter.printFlights(results);
+//    }
+
     public void searchFlightsTo(Location location) {
         System.out.println("Searching flights to: " + location.toString() + "...");
         List<Flight> results = flightsCollection.getFlights().stream()
