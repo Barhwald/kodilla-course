@@ -14,9 +14,9 @@ public class UserTestSuite {
     void testDefaultSharingStrategies() {
 
         //Given
-        User user1 = new Millenials("Jan2134", snapchatPublisher);
-        User user2 = new YGeneration("Amarena21", facebookPublisher);
-        User user3 = new ZGeneration("xoxoxo", twitterPublisher);
+        User user1 = new Millenials("Jan2134");
+        User user2 = new YGeneration("Amarena21");
+        User user3 = new ZGeneration("xoxoxo");
 
         //When
         String user1Shares = user1.sharePost();
@@ -33,7 +33,7 @@ public class UserTestSuite {
     void testIndividualSharingStrategy() {
 
         //Given
-        User user1 = new Millenials("Jan2134", snapchatPublisher);
+        User user1 = new Millenials("Jan2134");
 
         //When
         user1.setSocialPublisher(facebookPublisher);

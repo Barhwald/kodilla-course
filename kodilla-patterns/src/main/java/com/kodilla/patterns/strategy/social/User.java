@@ -3,11 +3,10 @@ package com.kodilla.patterns.strategy.social;
 public sealed class User permits Millenials, YGeneration, ZGeneration{
 
     private String login;
-    private SocialPublisher socialPublisher;
+    protected SocialPublisher socialPublisher;
 
-    public User(String login, SocialPublisher socialPublisher) {
+    public User(String login) {
         this.login = login;
-        this.socialPublisher = socialPublisher;
     }
 
     public String sharePost() {
