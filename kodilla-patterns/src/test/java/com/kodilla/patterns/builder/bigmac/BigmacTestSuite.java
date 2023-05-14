@@ -26,6 +26,7 @@ public class BigmacTestSuite {
         int meatChopsNum = myBigmac.getBurgers();
         int ingredientsNum = myBigmac.getIngredients().size();
 
+        //Then
         assertEquals("barbecue", whatSauce);
         assertEquals(2, meatChopsNum);
         assertEquals(5, ingredientsNum);
