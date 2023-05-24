@@ -9,6 +9,10 @@ public class SudokuDataPrinter {
                 """);
     }
 
+    public void congratz() {
+        System.out.println("Sudoku finished. Congrats!");
+    }
+
     public void printBoard(int[][] board) {
         for (int i = 0; i < 9; i++) {
             if (i == 3 || i == 6) {

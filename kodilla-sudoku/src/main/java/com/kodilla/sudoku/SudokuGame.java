@@ -23,7 +23,7 @@ public class SudokuGame {
             }
         }
         dataPrinter.printBoard(board);
-        System.out.println("Sudoku finished. Congrats!");
+        dataPrinter.congratz();
     }
 
     public void setBoardElementValue(String input) {
