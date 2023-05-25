@@ -26,6 +26,14 @@ public class SudokuGame {
         dataPrinter.congratz();
     }
 
+    public void setBoard(int[][] board) {
+        this.board = board;
+    }
+
+    public int[][] getBoard() {
+        return board;
+    }
+
     public void setBoardElementValue(String input) {
         int col, row, num;
         col = Integer.parseInt(input.substring(0, 1));
