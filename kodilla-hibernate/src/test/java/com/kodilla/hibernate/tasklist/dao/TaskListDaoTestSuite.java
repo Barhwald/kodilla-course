@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -26,7 +27,7 @@ public class TaskListDaoTestSuite {
 
         //then
         String name = taskList.getListName();
-        Optional<TaskList> optionalTaskList = taskListDao.findByListName(name);
+        Optional<List<TaskList>> optionalTaskList = Optional.ofNullable(taskListDao.findByListName(name));
         assertTrue(optionalTaskList.isPresent());
 
         //cleanUp
