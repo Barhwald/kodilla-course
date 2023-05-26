@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 @Transactional
 @Repository
 public interface TaskDao extends CrudRepository<Task, Integer> {
