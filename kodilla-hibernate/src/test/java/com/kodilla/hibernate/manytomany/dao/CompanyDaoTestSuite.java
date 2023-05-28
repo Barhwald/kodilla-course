@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -13,6 +15,9 @@ class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany() {
@@ -57,6 +62,44 @@ class CompanyDaoTestSuite {
             companyDao.deleteById(greyMatterId);
         } catch (Exception e) {
             //do nothing
+        }
+    }
+
+    @Test
+    void testEmployeeRetrieveWithLastName() {
+        //given
+        Employee emp1 = new Employee("John", "McMahon");
+        int id = emp1.getId();
+        employeeDao.save(emp1);
+
+        //when
+        List<Employee> resultList = employeeDao.retrieveWithLastname("McMahon");
+
+        //then
+        try {
+            assertEquals(1, resultList.size());
+        } finally {
+            //cleanUp
+            employeeDao.deleteById(id);
+        }
+    }
+
+    @Test
+    void testCompanyRetrieveWhereThreeFirstChars() {
+        //given
+        Company comp1 = new Company("Bellini");
+        int id = comp1.getId();
+        companyDao.save(comp1);
+
+        //when
+        List<Company> resultList = companyDao.retrieveCompaniesWhereThreeFirstChars("Bel");
+
+        //then
+        try {
+            assertEquals(1, resultList.size());
+        } finally {
+            //cleanUp
+            companyDao.deleteById(id);
         }
     }
 }
