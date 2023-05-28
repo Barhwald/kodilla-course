@@ -69,10 +69,10 @@ class CompanyDaoTestSuite {
     void testEmployeeRetrieveWithLastName() {
         //given
         Employee emp1 = new Employee("John", "McMahon");
-        int id = emp1.getId();
-        employeeDao.save(emp1);
 
         //when
+        employeeDao.save(emp1);
+        int id = emp1.getId();      // getId musi byc po .save, bo inaczej id nie zostanie ściągnięte
         List<Employee> resultList = employeeDao.retrieveWithLastname("McMahon");
 
         //then
@@ -88,10 +88,10 @@ class CompanyDaoTestSuite {
     void testCompanyRetrieveWhereThreeFirstChars() {
         //given
         Company comp1 = new Company("Bellini");
-        int id = comp1.getId();
-        companyDao.save(comp1);
 
         //when
+        companyDao.save(comp1);
+        int id = comp1.getId();
         List<Company> resultList = companyDao.retrieveCompaniesWhereThreeFirstChars("Bel");
 
         //then
